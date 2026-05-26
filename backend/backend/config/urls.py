@@ -1,6 +1,7 @@
-from django.urls import path
-from .views import upload_data
+from django.contrib import admin
+from django.urls import path, include
 
 urlpatterns = [
-    path("upload/", upload_data),
+    path('admin/', admin.site.urls),
+    path('api/ingestion/', include('ingestion.urls')),
 ]
